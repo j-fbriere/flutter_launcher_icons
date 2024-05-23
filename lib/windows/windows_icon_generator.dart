@@ -68,7 +68,7 @@ class WindowsIconGenerator extends IconGenerator {
       ),
     ];
 
-    final failedEntityPath = utils.areFSEntiesExist(entitesToCheck);
+    final failedEntityPath = utils.areFSEntitiesExist(entitesToCheck);
     if (failedEntityPath != null) {
       context.logger.error(
         '$failedEntityPath this file or folder is required to generate web icons',

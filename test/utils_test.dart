@@ -16,7 +16,7 @@ void main() {
 
     test('should return null when entites exists', () async {
       expect(
-        utils.areFSEntiesExist([
+        utils.areFSEntitiesExist([
           path.join(prefixPath, 'file1.txt'),
           path.join(prefixPath, 'dir1'),
         ]),
@@ -25,7 +25,7 @@ void main() {
     });
 
     test('should return the file path that does not exist', () {
-      final result = utils.areFSEntiesExist([
+      final result = utils.areFSEntitiesExist([
         path.join(prefixPath, 'dir1'),
         path.join(prefixPath, 'file_that_does_not_exist.txt'),
       ]);
@@ -37,7 +37,7 @@ void main() {
     });
 
     test('should return the dir path that does not exist', () {
-      final result = utils.areFSEntiesExist([
+      final result = utils.areFSEntitiesExist([
         path.join(prefixPath, 'dir_that_does_not_exist'),
         path.join(prefixPath, 'file.txt'),
       ]);
@@ -46,7 +46,7 @@ void main() {
     });
 
     test('should return the first entity path that does not exist', () {
-      final result = utils.areFSEntiesExist([
+      final result = utils.areFSEntitiesExist([
         path.join(prefixPath, 'dir_that_does_not_exist'),
         path.join(prefixPath, 'file_that_dodes_not_exist.txt'),
       ]);

@@ -15,6 +15,14 @@ class WebConfig {
   @JsonKey(name: 'image_path')
   final String? imagePath;
 
+  /// apple_mobile_web_app_title
+  @JsonKey(name: 'apple_mobile_web_app_title')
+  final String? appleMobileWebAppTitle;
+
+  /// apple_mobile_web_app_status_bar_style
+  @JsonKey(name: 'apple_mobile_web_app_status_bar_style')
+  final String? appleMobileWebAppStatusBarStyle;
+
   /// manifest.json's background_color
   @JsonKey(name: 'background_color')
   final String? backgroundColor;
@@ -23,12 +31,24 @@ class WebConfig {
   @JsonKey(name: 'theme_color')
   final String? themeColor;
 
+  /// icon_sizes
+  @JsonKey(name: 'icon_sizes')
+  final List<int>? iconSizes;
+
+  /// favicon_sizes
+  @JsonKey(name: 'favicon_sizes')
+  final List<int>? faviconSizes;
+
   /// Creates an instance of [WebConfig]
   const WebConfig({
     this.generate = false,
     this.imagePath,
+    this.appleMobileWebAppTitle,
+    this.appleMobileWebAppStatusBarStyle,
     this.backgroundColor,
     this.themeColor,
+    this.iconSizes,
+    this.faviconSizes
   });
 
   /// Creates [WebConfig] from [json]

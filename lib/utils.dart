@@ -69,7 +69,7 @@ String prettifyJsonEncode(Object? map) =>
 
 /// Check if give [File] or [Directory] exists at the give [paths],
 /// if not returns the failed [FileSystemEntity] path
-String? areFSEntiesExist(List<String> paths) {
+String? areFSEntitiesExist(List<String> paths) {
   for (final path in paths) {
     final fsType = FileSystemEntity.typeSync(path);
     if (![FileSystemEntityType.directory, FileSystemEntityType.file]

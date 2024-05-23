@@ -49,7 +49,7 @@ String webIconsDirPath = path.join(webDirPath, 'icons');
 String webManifestFilePath = path.join(webDirPath, 'manifest.json');
 // TODO(RatakondalaArun): support for other images formats
 /// Relative favicon.png path
-String webFaviconFilePath = path.join(webDirPath, 'favicon.png');
+String webFaviconFilePath(int size) => path.join(webDirPath, 'favicon-${size}x$size.png');
 
 /// Relative index.html file path
 String webIndexFilePath = path.join(webDirPath, 'index.html');

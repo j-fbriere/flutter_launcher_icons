@@ -3,28 +3,22 @@ class WebIconTemplate {
   /// Size of the web icon
   final int size;
 
-  /// Support for maskable icon
-  ///
-  /// Refer to https://web.dev/maskable-icon/
-  final bool maskable;
-
   /// Creates an instance of [WebIconTemplate].
   const WebIconTemplate({
     required this.size,
-    this.maskable = false,
   });
 
   /// Icon file name
-  String get iconFile => 'Icon${maskable ? '-maskable' : ''}-$size.png';
+  String get iconFile => 'icon-${size}x$size.png';
 
   /// Icon config for manifest.json
   ///
   /// ```json
   ///  {
-  ///         "src": "icons/Icon-maskable-192.png",
+  ///         "src": "icons/icon-192x192.png",
   ///         "sizes": "192x192",
   ///         "type": "image/png",
-  ///         "purpose": "maskable"
+  ///         "purpose": "maskable any"
   ///  },
   /// ```
   Map<String, dynamic> get iconManifest {
@@ -32,7 +26,7 @@ class WebIconTemplate {
       'src': 'icons/$iconFile',
       'sizes': '${size}x$size',
       'type': 'image/png',
-      if (maskable) 'purpose': 'maskable',
+      'purpose': 'maskable any',
     };
   }
 }
